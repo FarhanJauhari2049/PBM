@@ -11,16 +11,6 @@ class Body extends StatelessWidget {
     return Column(
         
         children: <Widget>[
-          //   Padding(
-          //     padding: const EdgeInsets.symmetric(horizontal: kDefaultPaddin),
-          //     child: Text(
-          //       "Flower Shop",
-          //       style: Theme.of(context)
-          //           .textTheme
-          //           .headline5
-          //           .copyWith(fontWeight: FontWeight.bold),
-          //     ),
-          //   ),
           Expanded(
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: kDefaultPaddin),
