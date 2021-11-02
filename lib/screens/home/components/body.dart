@@ -5,23 +5,40 @@ import 'package:flower_shop/models/Product.dart';
 
 import 'item_card.dart';
 
+class HomeScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: buildAppBar(),
+      body: Body(),
+      // bottomNavigationBar: LayoutNavigationBar(),
+    );
+  }
+
+  AppBar buildAppBar() {
+    return AppBar(
+        backgroundColor: Colors.white,
+        title:
+            Row(mainAxisAlignment: MainAxisAlignment.center, children: <Widget>[
+          Text(
+            "Flower Shop",
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              color: Colors.black,
+              fontWeight: FontWeight.bold,
+              fontSize: 25,
+            ),
+          ),
+        ]));
+  }
+}
+
 class Body extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          // Padding(
-          //   padding: const EdgeInsets.symmetric(horizontal: kDefaultPaddin),
-          //   child: Text(
-          //     "Flower Shop",
-          //     style: Theme.of(context)
-          //         .textTheme
-          //         .headline5
-          //         .copyWith(fontWeight: FontWeight.bold),
-          //   ),
-          // ),
-
           Image.asset("assets/images/gambar1.jpg"),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: kDefaultPaddin),
@@ -34,7 +51,6 @@ class Body extends StatelessWidget {
               ),
             ),
           ),
-
           Expanded(
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: kDefaultPaddin),
