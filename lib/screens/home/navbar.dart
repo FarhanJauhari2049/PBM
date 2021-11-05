@@ -19,9 +19,9 @@ class _LayoutNavigationBarState extends State<LayoutNavigationBar> {
 
   final List<Widget> _children = [
     HomeScreen(),
-    Orders(),
-    Account(),
-    Cart(),
+    OrdersAppBar(),
+    CartAppBar(),
+    AccountAppBar(),
   ];
 
   @override
