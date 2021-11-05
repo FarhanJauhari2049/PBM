@@ -21,7 +21,6 @@ class HomeScreen extends StatelessWidget {
             Row(mainAxisAlignment: MainAxisAlignment.center, children: <Widget>[
           Text(
             "Flower Shop",
-            textAlign: TextAlign.center,
             style: TextStyle(
               color: Colors.black,
               fontWeight: FontWeight.bold,

@@ -2,17 +2,18 @@ import 'package:flower_shop/constants.dart';
 import 'package:flower_shop/detail/body.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:flower_shop/screens/home/navbar.dart';
 
 class Bouquet extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: buildAppBar(),
+      appBar: buildAppBar(context),
       body: Body(),
       );
   }
 
-  AppBar buildAppBar() {
+  AppBar buildAppBar(BuildContext context){
     return AppBar(
       backgroundColor: Colors.white,
       elevation: 0,
@@ -26,7 +27,9 @@ class Bouquet extends StatelessWidget {
       ),
       leading: IconButton(
         icon: SvgPicture.asset("assets/icons/back.svg"),
-        onPressed: () {},
+        onPressed: () {
+           Navigator.push(context, MaterialPageRoute(builder: (context) => LayoutNavigationBar()));
+        },
       ),
       actions: <Widget>[
         IconButton(
