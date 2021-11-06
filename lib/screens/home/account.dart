@@ -41,12 +41,48 @@ class Account extends StatelessWidget{
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        body: Center(
-          child: Text('Account', 
-            style: TextStyle(
-                fontSize: 26
+        body: Column(
+          children: <Widget>[
+            Padding(padding: EdgeInsets.only(top: 16.0)),
+            Text("Your Profile", style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                  decoration: TextDecoration.none,),),
+            Padding(padding: EdgeInsets.only(top: 16.0)),
+            TextFormField(
+              decoration: InputDecoration(
+              hintText: "Masukkan nama lengkap anda",
+              labelText: "Nama Lengkap",
+              border: OutlineInputBorder(borderRadius: BorderRadius.circular(5.0)),              
+              ),
             ),
-          ),
+            Padding(padding: EdgeInsets.only(top: 16.0)),
+            TextFormField(
+              decoration: InputDecoration(
+              hintText: "Masukkan nomor handphone anda",
+              labelText: "Nomor Handphone",
+              border: OutlineInputBorder(borderRadius: BorderRadius.circular(5.0))
+              ),
+            ),
+            Padding(padding: EdgeInsets.only(top: 16.0)),
+            TextFormField(
+              decoration: InputDecoration(
+              hintText: "Masukkan alamat anda",
+              labelText: "Alamat",
+              border: OutlineInputBorder(borderRadius: BorderRadius.circular(5.0))
+              ),
+            ),
+            ElevatedButton(
+              style: TextButton.styleFrom(backgroundColor: Colors.white),
+              onPressed: (){},
+              child: Text("Submit",style: TextStyle(
+                  color: Colors.black,
+                )),
+              )
+          ],
+          
+          
         ),
       ),
     );
