@@ -1,6 +1,5 @@
 import 'package:flower_shop/screens/home/navbar.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 
 class OrdersAppBar extends StatelessWidget {
   @override
