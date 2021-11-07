@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:flower_shop/screens/home/navbar.dart';
 import 'item_card.dart';
-import 'package:flower_shop/screens/order/details.dart';
+import 'package:flower_shop/screens/order/body.dart';
 import 'package:flower_shop/detail/productBouquet.dart';
 
 class Bouquet extends StatelessWidget {
