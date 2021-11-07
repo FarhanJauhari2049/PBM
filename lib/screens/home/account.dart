@@ -25,12 +25,6 @@ class AccountAppBar extends StatelessWidget {
           ),
         ),
       ]),
-      leading: IconButton(
-        icon: SvgPicture.asset("assets/icons/back.svg"),
-        onPressed: () {
-          Navigator.push(context, MaterialPageRoute(builder: (context) => LayoutNavigationBar()));
-        },
-      ),
     );
   }
 }
