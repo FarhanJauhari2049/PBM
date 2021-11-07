@@ -1,6 +1,4 @@
-import 'package:flower_shop/screens/home/navbar.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 
 class AccountAppBar extends StatelessWidget {
   @override
@@ -34,16 +32,53 @@ class Account extends StatelessWidget{
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      home:  Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: <Widget>[
+            Padding(padding: EdgeInsets.all(16.0)),
+            Text("Your Profile", style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 25,
+                  fontWeight: FontWeight.bold,
+                  decoration: TextDecoration.none,),
+                  ),
+            Padding(padding: EdgeInsets.all(16.0)),
+            Text("Name   : Mawar Melati", style: TextStyle(color: Colors.black54, fontSize: 15,decoration: TextDecoration.none)),
+            Padding(padding: EdgeInsets.all(16.0)),
+            Text("Phone  : 087654367762", style: TextStyle(color: Colors.black54, fontSize: 15,decoration: TextDecoration.none)),
+            Padding(padding: EdgeInsets.all(16.0)),
+            Text("Address  : Jakarta Selatan", style: TextStyle(color: Colors.black54, fontSize: 15,decoration: TextDecoration.none)),
+            Padding(padding: EdgeInsets.all(16.0)),
+            IconButton(
+              onPressed: (){
+                Navigator.push(context,
+                MaterialPageRoute(builder: (context) => Edit()));
+              }, 
+              icon: Icon(Icons.edit),
+              )
+            
+          ]
+          ),
+
+    );
+  }
+}
+
+class Edit extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
         body: Column(
           children: <Widget>[
-            Padding(padding: EdgeInsets.only(top: 16.0)),
-            Text("Your Profile", style: TextStyle(
+            Padding(padding: EdgeInsets.all(16.0)),
+            Text("Edit Your Profile", style: TextStyle(
                   color: Colors.black,
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
                   decoration: TextDecoration.none,),),
-            Padding(padding: EdgeInsets.only(top: 16.0)),
+            Padding(padding: EdgeInsets.all(10.0)),
             TextFormField(
               decoration: InputDecoration(
               hintText: "Masukkan nama lengkap anda",
@@ -51,7 +86,7 @@ class Account extends StatelessWidget{
               border: OutlineInputBorder(borderRadius: BorderRadius.circular(5.0)),              
               ),
             ),
-            Padding(padding: EdgeInsets.only(top: 16.0)),
+            Padding(padding: EdgeInsets.all(16.0)),
             TextFormField(
               decoration: InputDecoration(
               hintText: "Masukkan nomor handphone anda",
@@ -59,7 +94,7 @@ class Account extends StatelessWidget{
               border: OutlineInputBorder(borderRadius: BorderRadius.circular(5.0))
               ),
             ),
-            Padding(padding: EdgeInsets.only(top: 16.0)),
+            Padding(padding: EdgeInsets.all(16.0)),
             TextFormField(
               decoration: InputDecoration(
               hintText: "Masukkan alamat anda",

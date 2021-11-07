@@ -36,4 +36,22 @@ List<Product> products = [
       price: 670000,
       image: "assets/images/gambar9.jpeg",
       ),
+  Product(
+      id: 5,
+      title: "White Flowers Bouquet",
+      price: 120000,
+      image: "assets/images/gambar13.jpeg",
+      ),
+  Product(
+      id: 6,
+      title: "Yellow Bouquet",
+      price: 30000,
+      image: "assets/images/gambar14.jpeg",
+      ),
+  Product(
+      id: 7,
+      title: "Pink Bouquet",
+      price: 150000,
+      image: "assets/images/gambar15.jpeg",
+      ),
 ];
