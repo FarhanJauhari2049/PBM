@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flower_shop/detail/productBouquet.dart';
+import 'package:flower_shop/detail1/productBouquet.dart';
 
 import '../../../constants.dart';
 

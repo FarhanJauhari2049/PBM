@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flower_shop/screens/home/components/body.dart';
-import 'package:flower_shop/screens/home/cart.dart';
-import 'package:flower_shop/screens/home/account.dart';
-import 'package:flower_shop/screens/home/orders.dart';
+import 'package:flower_shop/home1/body.dart';
+import 'package:flower_shop/home/cart.dart';
+import 'package:flower_shop/home/account.dart';
+import 'package:flower_shop/home/orders.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -16,7 +16,7 @@ class LayoutNavigationBar extends StatefulWidget {
 
 class _LayoutNavigationBarState extends State<LayoutNavigationBar> {
   int _currentIndex = 0;
-
+  
   final List<Widget> _children = [
     HomeScreen(),
     OrdersAppBar(),

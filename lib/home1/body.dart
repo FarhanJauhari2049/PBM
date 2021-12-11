@@ -1,7 +1,7 @@
-import 'package:flower_shop/detail/bouquet.dart';
+import 'package:flower_shop/detail1/bouquet.dart';
 import 'package:flutter/material.dart';
 import 'package:flower_shop/constants.dart';
-import 'package:flower_shop/models/Product.dart';
+import 'package:flower_shop/product/Product.dart';
 
 import 'item_card.dart';
 
@@ -63,7 +63,7 @@ class Body extends StatelessWidget {
                   itemBuilder: (context, index) => ItemCard(
                         product: products[index],
                         press: () => Navigator.push(context,
-                            MaterialPageRoute(builder: (context) => Bouquet())),
+                            MaterialPageRoute(builder: (context) => LiveSearch())),
                       )),
             ),
           )

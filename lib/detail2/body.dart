@@ -1,6 +1,8 @@
+import 'package:flower_shop/detail1/bouquet.dart';
+import 'package:flower_shop/detail2/cart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:flower_shop/detail/productBouquet.dart';
+import 'package:flower_shop/detail1/productBouquet.dart';
 
 class Details extends StatelessWidget {
   @override
@@ -16,7 +18,9 @@ class Details extends StatelessWidget {
       backgroundColor: Colors.white,
       leading: IconButton(
         icon: SvgPicture.asset("assets/icons/back.svg"),
-        onPressed: () {},
+        onPressed: () {
+          Navigator.push(context, MaterialPageRoute(builder: (context) => LiveSearch()));
+        },
       ),
       title:
           Row(mainAxisAlignment: MainAxisAlignment.center, children: <Widget>[
@@ -48,15 +52,18 @@ class Body extends StatelessWidget {
               style: TextStyle(color: Colors.black, fontSize: 20)),
           Padding(padding: EdgeInsets.only(top: 10)),
           Text("265000", style: TextStyle(color: Colors.black, fontSize: 20)),
-          Padding(padding: EdgeInsets.only(top: 10)),
+          Padding(padding: EdgeInsets.all(10)),
           Text(
               "Flower color available in: purple, yellow, pink. Wrapping color varies based on your flower color. If you have special coloer req, you can also add it on notes.",
               style: TextStyle(
-                fontSize: 20,
-              )),
+                fontSize: 20,  
+              ), textAlign: TextAlign.center),
+          Padding(padding: EdgeInsets.all(10)),
           Row(mainAxisAlignment: MainAxisAlignment.center, children: <Widget>[
             ElevatedButton.icon(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => AddToCart()));
+              },
               icon: SvgPicture.asset("assets/icons/add_to_cart.svg"),
               label: Text(
                 "Add to Cart",

@@ -1,12 +1,12 @@
-import 'package:flower_shop/screens/home/navbar.dart';
+import 'package:flower_shop/home/navbar.dart';
 import 'package:flutter/material.dart';
 
-class OrdersAppBar extends StatelessWidget {
+class CartAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: buildAppBar(context),
-      body: Orders(),
+      body: Cart(),
     );
   }
 
@@ -16,7 +16,7 @@ class OrdersAppBar extends StatelessWidget {
       title:
           Row(mainAxisAlignment: MainAxisAlignment.center, children: <Widget>[
         Text(
-          "Orders",
+          "Cart",
           style: TextStyle(
             color: Colors.black,
             fontWeight: FontWeight.bold,
@@ -27,15 +27,16 @@ class OrdersAppBar extends StatelessWidget {
     );
   }
 }
-class Orders extends StatelessWidget{
+
+class Cart extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-       home: Column(
+      home: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text("Get Something Special",
+            Text("Your Cart is Empty",
                 style: TextStyle(
                   color: Colors.black,
                   fontSize: 20,
@@ -50,7 +51,7 @@ class Orders extends StatelessWidget{
                         builder: (context) => LayoutNavigationBar()));
               },
               child: Text(
-                "ORDER NOW",
+                "BUY NOW",
                 style: TextStyle(
                   color: Colors.black,
                 ),
