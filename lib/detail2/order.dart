@@ -8,24 +8,19 @@ class AddToOrder extends StatelessWidget {
       body: ListView.builder(
         itemBuilder: (context, index) {
           return Card(
-            child: ListTile(
-                title: Text(
-                  "Riwayat belanja",
-                  style: TextStyle(fontSize: 30)
-                ),
-                subtitle: Text("anda telah membeli barang ini"),
-                leading: CircleAvatar(
-                  child: Image(image: AssetImage("assets/images/gambar2.jpeg"),)
-                )
-            ),
-          );
+              child: ListTile(
+                  title:
+                      Text("Baby Breath Bouquet", style: TextStyle(fontSize: 30)),
+                  subtitle: Text("anda telah membeli barang ini"),
+                  leading: Image(
+                    image: AssetImage("assets/images/gambar2.jpeg"),
+                  )));
         },
-        
       ),
-        );
+    );
   }
 
-   AppBar buildAppBar(BuildContext context) {
+  AppBar buildAppBar(BuildContext context) {
     return AppBar(
       backgroundColor: Colors.white,
       title:

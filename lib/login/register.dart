@@ -47,7 +47,8 @@ class RegisterPage extends StatelessWidget {
           "Registration",
           style: TextStyle(
             color: Colors.white,
-            fontSize: 16.0,
+            fontSize: 20.0,
+            fontWeight: FontWeight.bold,
           ),
         ),
         Padding(
@@ -56,7 +57,7 @@ class RegisterPage extends StatelessWidget {
         Text(
           "Daftarkan akun anda jika belum memiliki akun",
           style: TextStyle(
-            fontSize: 12.0,
+            fontSize: 17.0,
             color: Colors.white,
           ),
           textAlign: TextAlign.center,

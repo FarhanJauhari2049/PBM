@@ -46,7 +46,8 @@ class LoginPage extends StatelessWidget {
           "Login",
           style: TextStyle(
             color: Colors.white,
-            fontSize: 16.0,
+            fontSize: 20.0,
+            fontWeight: FontWeight.bold,
           ),
         ),
         Padding(
@@ -55,7 +56,7 @@ class LoginPage extends StatelessWidget {
         Text(
           "Silahkan login jika sudah memiliki akun",
           style: TextStyle(
-            fontSize: 12.0,
+            fontSize: 17.0,
             color: Colors.white,
           ),
           textAlign: TextAlign.center,
