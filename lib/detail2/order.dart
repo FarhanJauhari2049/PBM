@@ -12,9 +12,10 @@ class AddToOrder extends StatelessWidget {
                   title:
                       Text("Baby Breath Bouquet", style: TextStyle(fontSize: 30)),
                   subtitle: Text("anda telah membeli barang ini"),
-                  leading: Image(
-                    image: AssetImage("assets/images/gambar2.jpeg"),
-                  )));
+                  leading: CircleAvatar(
+                    backgroundImage: AssetImage("assets/images/gambar2.jpeg",),
+                  )
+                  ));
         },
       ),
     );
@@ -24,7 +25,7 @@ class AddToOrder extends StatelessWidget {
     return AppBar(
       backgroundColor: Colors.white,
       title:
-          Row(mainAxisAlignment: MainAxisAlignment.center, children: <Widget>[
+        Row(mainAxisAlignment: MainAxisAlignment.center, children: <Widget>[
         Text(
           "Cart",
           style: TextStyle(

@@ -56,7 +56,7 @@ class _LiveSearchState extends State<LiveSearch> {
     return Scaffold(
         appBar: AppBar(
           backgroundColor: _bgColor,
-          title: searchTextField,
+          title: searchTextField,        
           leading: new IconButton(
               icon: SvgPicture.asset("assets/icons/back.svg"),
               onPressed: () {
@@ -64,8 +64,7 @@ class _LiveSearchState extends State<LiveSearch> {
                     MaterialPageRoute(builder: (context) => LayoutNavigationBar()));
               },
             ),
-          actions: <Widget>[
-            
+          actions: <Widget>[           
             (!search)
                 ? IconButton(
                     icon: Icon(
