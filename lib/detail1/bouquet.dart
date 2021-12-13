@@ -40,6 +40,7 @@ class LiveSearch extends StatefulWidget {
 
 class _LiveSearchState extends State<LiveSearch> {
   TextEditingController _controllerSearch = TextEditingController();
+  
   Widget searchTextField;
   bool search = false;
   Color _bgColor = Colors.white;
@@ -56,15 +57,30 @@ class _LiveSearchState extends State<LiveSearch> {
     return Scaffold(
         appBar: AppBar(
           backgroundColor: _bgColor,
-          title: searchTextField,        
+          title: searchTextField = Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    Text(
+                  "Bouquet",
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 25,
+                  ),
+                )
+                  ]
+                  
+                ),
           leading: new IconButton(
-              icon: SvgPicture.asset("assets/icons/back.svg"),
-              onPressed: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => LayoutNavigationBar()));
-              },
-            ),
-          actions: <Widget>[           
+            icon: SvgPicture.asset("assets/icons/back.svg"),
+            onPressed: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => LayoutNavigationBar()));
+            },
+          ),
+          actions: <Widget>[
             (!search)
                 ? IconButton(
                     icon: Icon(
@@ -88,7 +104,7 @@ class _LiveSearchState extends State<LiveSearch> {
                       setState(() {
                         list.clear();
                         list.addAll(items);
-                      _controllerSearch.clear();
+                        _controllerSearch.clear();
                       });
                     })
           ],
@@ -113,16 +129,30 @@ class _LiveSearchState extends State<LiveSearch> {
       controller: _controllerSearch,
       style: TextStyle(color: Colors.black, fontSize: 18),
       decoration: InputDecoration(
+        
           icon: IconButton(
-            icon: Icon(
-              Icons.arrow_back,
-              color: Colors.black,
-            ),
-           
+              icon: Icon(
+                Icons.arrow_back,
+                color: Colors.black,
+              ),
               onPressed: () {
-                //  searchTextField = Text("List Users");
-                //  search = !search;
-                // _bgColor = Colors.blue;
+                searchTextField = Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    Text(
+                  "Bouquet",
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 25,
+                  ),
+                )
+                  ]
+                  
+                );
+                
+                search = !search;
+                _bgColor = Colors.white;
                 _controllerSearch.clear();
                 list.clear();
                 list.addAll(items);
