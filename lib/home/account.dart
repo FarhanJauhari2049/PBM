@@ -1,3 +1,4 @@
+import 'package:flower_shop/login/main.dart';
 import 'package:flutter/material.dart';
 
 class AccountAppBar extends StatelessWidget {
@@ -35,28 +36,57 @@ class Account extends StatelessWidget{
       home:  Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
-            Padding(padding: EdgeInsets.all(16.0)),
-            Text("Your Profile", style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 25,
-                  fontWeight: FontWeight.bold,
-                  decoration: TextDecoration.none,),
-                  ),
-            Padding(padding: EdgeInsets.all(16.0)),
-            Text("Name   : Mawar Melati", style: TextStyle(color: Colors.black54, fontSize: 15,decoration: TextDecoration.none)),
-            Padding(padding: EdgeInsets.all(16.0)),
-            Text("Phone  : 087654367762", style: TextStyle(color: Colors.black54, fontSize: 15,decoration: TextDecoration.none)),
-            Padding(padding: EdgeInsets.all(16.0)),
-            Text("Address  : Jakarta Selatan", style: TextStyle(color: Colors.black54, fontSize: 15,decoration: TextDecoration.none)),
-            Padding(padding: EdgeInsets.all(16.0)),
-            IconButton(
-              onPressed: (){
-                Navigator.push(context,
-                MaterialPageRoute(builder: (context) => Edit()));
-              }, 
-              icon: Icon(Icons.edit),
-              )
-            
+           Padding(padding: EdgeInsets.only(top: 20.0),),
+            CircleAvatar(
+              radius: 80.0,
+              backgroundImage: AssetImage("assets/images/profil2.png"),
+            ),
+            SizedBox(
+              height: 20.0,
+            ),
+            ListTile(
+              title: Text("Username",
+              style: TextStyle(
+                fontFamily: 'Montserrat',
+                fontSize: 20.0,
+                fontWeight: FontWeight.bold,
+              ),),
+              subtitle: Text(account[0].toString(),
+              style: TextStyle(
+                fontFamily: 'Montserrat',
+                fontSize: 15.0,
+              ),
+              ),             
+            ),
+            ListTile(
+              title: Text("Telepon",
+              style: TextStyle(
+                fontFamily: 'Montserrat',
+                fontSize: 20.0,
+                fontWeight: FontWeight.bold,
+              ),),
+              subtitle: Text(account[2].toString(),
+              style: TextStyle(
+                fontFamily: 'Montserrat',
+                fontSize: 15.0,
+              ),
+              ),             
+            ),
+            ListTile(
+              title: Text("Alamat",
+              style: TextStyle(
+                fontFamily: 'Montserrat',
+                fontSize: 20.0,
+                fontWeight: FontWeight.bold,
+              ),),
+              subtitle: Text(account[3].toString(),
+              style: TextStyle(
+                fontFamily: 'Montserrat',
+                fontSize: 15.0,
+              ),
+              ),             
+            ),
+ 
           ]
           ),
 
@@ -64,56 +94,4 @@ class Account extends StatelessWidget{
   }
 }
 
-class Edit extends StatelessWidget{
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        body: Column(
-          children: <Widget>[
-            Padding(padding: EdgeInsets.all(16.0)),
-            Text("Edit Your Profile", style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                  decoration: TextDecoration.none,),),
-            Padding(padding: EdgeInsets.all(10.0)),
-            TextFormField(
-              decoration: InputDecoration(
-              hintText: "Masukkan nama lengkap anda",
-              labelText: "Nama Lengkap",
-              border: OutlineInputBorder(borderRadius: BorderRadius.circular(5.0)),              
-              ),
-            ),
-            Padding(padding: EdgeInsets.all(16.0)),
-            TextFormField(
-              decoration: InputDecoration(
-              hintText: "Masukkan nomor handphone anda",
-              labelText: "Nomor Handphone",
-              border: OutlineInputBorder(borderRadius: BorderRadius.circular(5.0))
-              ),
-            ),
-            Padding(padding: EdgeInsets.all(16.0)),
-            TextFormField(
-              decoration: InputDecoration(
-              hintText: "Masukkan alamat anda",
-              labelText: "Alamat",
-              border: OutlineInputBorder(borderRadius: BorderRadius.circular(5.0))
-              ),
-            ),
-            ElevatedButton(
-              style: TextButton.styleFrom(backgroundColor: Colors.white),
-              onPressed: (){},
-              child: Text("Submit",style: TextStyle(
-                  color: Colors.black,
-                )),
-              )
-          ],
-          
-          
-        ),
-      ),
-    );
-  }
-}
+

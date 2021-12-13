@@ -1,9 +1,30 @@
+import 'package:flower_shop/login/login.dart';
+import 'package:flower_shop/login/main.dart';
 import 'package:flutter/material.dart';
 import 'constant.dart';
 
-class RegisterPage extends StatelessWidget {
-
+class RegisterPage extends StatefulWidget {
   static const routeName = "/registerPage";
+
+  @override
+  State<RegisterPage> createState() => _RegisterPageState();
+}
+
+class _RegisterPageState extends State<RegisterPage> {
+  TextEditingController username = new TextEditingController();
+  TextEditingController password = new TextEditingController();
+  TextEditingController telepon = new TextEditingController();
+  TextEditingController alamat = new TextEditingController();
+
+  @override
+  void dispose() {
+    // Clean up the controller when the widget is disposed.
+    username.dispose();
+    password.dispose();
+    telepon.dispose();
+    alamat.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -31,10 +52,10 @@ class RegisterPage extends StatelessWidget {
 
   Widget _iconRegister() {
     return Image.asset(
-              "assets/images/gambar17.jpeg",
-              width: 150.0,
-              height: 150.0,
-            );
+      "assets/images/gambar17.jpeg",
+      width: 150.0,
+      height: 150.0,
+    );
   }
 
   Widget _titleDescription() {
@@ -73,11 +94,12 @@ class RegisterPage extends StatelessWidget {
           padding: EdgeInsets.only(top: 12.0),
         ),
         TextFormField(
+          controller: username,
           decoration: const InputDecoration(
             border: UnderlineInputBorder(),
             enabledBorder: UnderlineInputBorder(
               borderSide: BorderSide(
-                color: ColorPalette.underlineTextField, 
+                color: ColorPalette.underlineTextField,
                 width: 1.5,
               ),
             ),
@@ -97,11 +119,12 @@ class RegisterPage extends StatelessWidget {
           padding: EdgeInsets.only(top: 12.0),
         ),
         TextFormField(
+          controller: password,
           decoration: const InputDecoration(
             border: UnderlineInputBorder(),
             enabledBorder: UnderlineInputBorder(
               borderSide: BorderSide(
-                color: ColorPalette.underlineTextField, 
+                color: ColorPalette.underlineTextField,
                 width: 1.5,
               ),
             ),
@@ -122,11 +145,12 @@ class RegisterPage extends StatelessWidget {
           padding: EdgeInsets.only(top: 12.0),
         ),
         TextFormField(
+          controller: telepon,
           decoration: const InputDecoration(
             border: UnderlineInputBorder(),
             enabledBorder: UnderlineInputBorder(
               borderSide: BorderSide(
-                color: ColorPalette.underlineTextField, 
+                color: ColorPalette.underlineTextField,
                 width: 1.5,
               ),
             ),
@@ -136,11 +160,35 @@ class RegisterPage extends StatelessWidget {
                 width: 3.0,
               ),
             ),
-            hintText: "Confirm Password",
+            hintText: "Telepon",
             hintStyle: TextStyle(color: ColorPalette.hintColor),
           ),
           style: TextStyle(color: Colors.white),
-          obscureText: true,
+          autofocus: false,
+        ),
+        Padding(
+          padding: EdgeInsets.only(top: 12.0),
+        ),
+        TextFormField(
+          controller: alamat,
+          decoration: const InputDecoration(
+            border: UnderlineInputBorder(),
+            enabledBorder: UnderlineInputBorder(
+              borderSide: BorderSide(
+                color: ColorPalette.underlineTextField,
+                width: 1.5,
+              ),
+            ),
+            focusedBorder: UnderlineInputBorder(
+              borderSide: BorderSide(
+                color: Colors.white,
+                width: 3.0,
+              ),
+            ),
+            hintText: "Alamat",
+            hintStyle: TextStyle(color: ColorPalette.hintColor),
+          ),
+          style: TextStyle(color: Colors.white),
           autofocus: false,
         ),
       ],
@@ -155,15 +203,20 @@ class RegisterPage extends StatelessWidget {
         ),
         Container(
           padding: EdgeInsets.symmetric(vertical: 8.0),
-            width: double.infinity,
-            child: TextButton(
+          width: double.infinity,
+          child: TextButton(
             style: TextButton.styleFrom(
               backgroundColor: Colors.white,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(30.0),
               ),
             ),
-            onPressed: () {},
+            onPressed: () {
+              print([username.text, password.text, telepon.text, alamat.text]);
+              listAccount.add(
+                  [username.text, password.text, telepon.text, alamat.text]);
+              Navigator.push(context, MaterialPageRoute(builder: (context) => LoginPage()) );
+            },
             child: Text(
               "Register",
               style: TextStyle(color: ColorPalette.primaryColor),
@@ -181,11 +234,10 @@ class RegisterPage extends StatelessWidget {
             fontSize: 12.0,
           ),
         ),
-
         Container(
           padding: EdgeInsets.symmetric(vertical: 8.0),
-            width: double.infinity,
-            child: TextButton(
+          width: double.infinity,
+          child: TextButton(
             style: TextButton.styleFrom(
               backgroundColor: Colors.transparent,
               shape: RoundedRectangleBorder(

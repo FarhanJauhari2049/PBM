@@ -1,9 +1,27 @@
 import 'package:flower_shop/home/navbar.dart';
+import 'package:flower_shop/login/main.dart';
 import 'package:flutter/material.dart';
 import 'constant.dart';
 import 'register.dart';
 
-class LoginPage extends StatelessWidget {
+class LoginPage extends StatefulWidget {
+  @override
+  State<LoginPage> createState() => _LoginPageState();
+}
+
+class _LoginPageState extends State<LoginPage> {
+  TextEditingController username = new TextEditingController();
+
+  TextEditingController password = new TextEditingController();
+
+  @override
+  void dispose() {
+    // Clean up the controller when the widget is disposed.
+    username.dispose();
+    password.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -72,6 +90,7 @@ class LoginPage extends StatelessWidget {
           padding: EdgeInsets.only(top: 12.0),
         ),
         TextFormField(
+          controller: username,
           decoration: const InputDecoration(
             border: UnderlineInputBorder(),
             enabledBorder: UnderlineInputBorder(
@@ -96,6 +115,7 @@ class LoginPage extends StatelessWidget {
           padding: EdgeInsets.only(top: 12.0),
         ),
         TextFormField(
+          controller: password,
           decoration: const InputDecoration(
             border: UnderlineInputBorder(),
             enabledBorder: UnderlineInputBorder(
@@ -129,8 +149,8 @@ class LoginPage extends StatelessWidget {
         ),
         Container(
           padding: EdgeInsets.symmetric(vertical: 8.0),
-            width: double.infinity,
-            child: TextButton(
+          width: double.infinity,
+          child: TextButton(
             style: TextButton.styleFrom(
               backgroundColor: Colors.white,
               shape: RoundedRectangleBorder(
@@ -138,7 +158,19 @@ class LoginPage extends StatelessWidget {
               ),
             ),
             onPressed: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context) => LayoutNavigationBar()));
+              print([username.text, password.text]);
+            for (int i = 0; i < listAccount.length; i++) {
+              if (username.text == listAccount[i][0] && password.text == listAccount[i][1]){
+                account = listAccount[i]; 
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => LayoutNavigationBar()) );
+                break;
+                  
+              }
+            }
+              // Navigator.push(
+              //     context,
+              //     MaterialPageRoute(
+              //         builder: (context) => LayoutNavigationBar()));
             },
             child: Text(
               "Login",
@@ -157,10 +189,10 @@ class LoginPage extends StatelessWidget {
             fontSize: 12.0,
           ),
         ),
-          Container(
+        Container(
           padding: EdgeInsets.symmetric(vertical: 8.0),
-            width: double.infinity,
-            child: TextButton(
+          width: double.infinity,
+          child: TextButton(
             style: TextButton.styleFrom(
               backgroundColor: Colors.transparent,
               shape: RoundedRectangleBorder(
@@ -168,7 +200,8 @@ class LoginPage extends StatelessWidget {
               ),
             ),
             onPressed: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context) => RegisterPage()));
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => RegisterPage()));
             },
             child: Text(
               "Register",
